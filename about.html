@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>H517 Project 1 Documentation</title>
+  </head>
+
+  <body>
+      <div class="pagetitle" style="font-size: 30" style="float: left;">Visualizing 1854 London Cholera Outbreak</div>
+      <div style="float: right;">
+          <form>
+              <input class="pagebutton" type="button" value="Back"
+              onclick="window.location.href='index.html'" />
+          </form>
+      </div>
+      <div style="font-size: 20" style="float: left;">More about this project</div>
+     <br></br>
+      <div class"pagetext">
+          <p>This data visualization was a part of a class project for H517 Visualization Design, Analysis & Evaluation
+          taught by Dr. Khairi Reda at IUPUI in the Fall of 2020. THe premise of the project was to recreate the map created
+          by Dr. John Snow that is often regarded as the first example of data visualization using JavaScript and the D3 data Visualization
+          library. As a part of the project, the datasets were provided that contained the x and y coordinates of the streets, location of the pumps,
+          number of deaths, and age and sex of all of the people that died. The demographic data that was provided was fictional and
+          allowed us to explore the data and possible trends through visualization.</p>
+          <p>In completing this assignment, I faced many challenges including:
+            <ul>
+              <li>The total length of time to complete this project (approximately 1 month)</li>
+              <li>No previous experience with JavaScript and CSS</li>
+              <li>I had never used D3 previously</li>
+            </ul>
+          </p>
+          <p>The source for this project is available <a href="link">here</a></p>
+    </div>
+    <div class="pagesubtitle" style="font-size: 20">Design Process</div>
+    <div class="pagetext">
+        <p>I developed this visualization by first reviewing the data provided. Once I reviewed the data that was available, I began to think through
+        what might be the best way to communicate the locations and demographic information of the deaths that occurred. We were given guidelines
+        to create a map and to visualize the number of deaths for each day, but I wanted to think about how to do this in the most intuitive and simple
+        manner. I then started mapping out a prototype on paper. I find that iterating on paper first allows me to think through the layout simply from
+        a visualization perspective rather than getting held up on the technical feasability of a particular feature. Given my limited experience with
+        JavaScript, this was particularly important for me so that I could tackle each component individually after I had already brought it all together
+        on paper.</p>
+        <p>After I created my "ideal" format on paper, I defined what would be the minimum viable product based on the requirements that were listed
+        as a part of the project. I knew that due to my limited experience with JavaScript and the relatively short timeframe to work on the project,
+        I would likely no be able to complete every component that was a part of my paper prototype. I found as I went through the process, that I was
+        very limited by what was technically feasible for me within my experience and capacity.</p>
+        <p>I began with the creation and placement of the map, as this was the primary focus and would be the canvas through which I had planned to add
+        filters and further visualize the data. Also, seeing the total number of deaths that would need to be mapped, I knew this would be the largest
+        component of the page and wanted to place it first so that I could build the rest of the page around it. I then created the bar chart to visualize
+        the number of deaths per day. I initially planned to create a line graph, but after considering the purpose of the graph I thought a bar chart would
+        be a better fit. After getting both graph components on the page, I then wrote the documentation and began foramtting the page to resemble my paper
+        prototype more closely.</p>
+        <p>
+        <p>I tested my visualizaiton with 2 users. I provided very little context and asked them to interact with the visualization. I wanted to ensure that
+          the informaiton I included in the page provided enough context to understand the puepose and background behind the visualization. I then watched
+          both users and made notes of their actions. As a result of the testing, I noted that the shape of the pumps should be different than the shape
+          of the deaths to help differentiate them.</p>
+        <p>I selected blue to denote the water pumps and red for the deaths, as this is an intuitive choice that also allows for approriate contrast
+          and passes the colorblindness test. I also included tooltips so that the user could easily see the exact number of deaths for a particular day by hovering over the bar. I used the visualization to then answer the question of where the most deaths were. I knew they would likely be
+          near the Broad Street pump, which was confirmed by viewing the map. I had planned to show both the gender and age data, which when I reviewed the data
+          in the CSV, it confirmed that there were not significant differences between male and females deaths which would make sense given that the contaminated
+          water would be consumed by both males and females alike. Something I found interesting was that there was such a high rate of death for the 0-10 years
+          old range and the >80 range. Both of these populations are particularly vulnerable, but since they do not represent a large percentage of the total
+          population, I found this surprising that there was such a high number of deaths for each of these categories.</p>
+    </div>
+    <div class="pagesubtitle" style="font-size: 20">Things I Would Have Done Differently</div>
+    <div class="pagetext">
+        <p>I faced significant challenges in terms of technical skills for this project. Although I was not able to implement most of the funcitonality that I
+          would have liked to, I am proud of myself for making significant progress from where I was before the project to now. I had many headaches, frustrating
+          moments, and long nights. While my project is not nearly where I would have liked it to be, it is not for lack of effort. I plan to continue to build
+          my skillset so that I can improve even further with project 2<p>
+        <p>If I had the ability to do so, I would have placed the graphs next to each other to improve interactability. It impacts the user experience when
+          the user has to scroll down to the bar graph and scroll back up to see how the number of deaths might have changed. By having the graphs side by side,
+          this aids data exploration and would have been a more cohesive design. Then, I would have placed 3 buttons to the left-hand side of the page that would say
+          "Total", "By Age", and "By Gender". When the user selects the button, the graph would become a stacked bar chart to show the number of deaths separated by gender and
+          the colors of the deaths would change on the map to show the distribution. The interactivity that would allow the user to see how many deaths on a specific
+          day would remain in tact so that the user could explore the distribution of deaths in terms of demographics more fully. When the user is done, they would select the
+          total button to see all the totals again. The same would be done with age distribution. This way, there would not be many graphs cluttering the page, but interactivity
+          would be built in to the map and one bar chart so that they could serve many purposes. Selecting color would have been a key piece of making this envisioned
+          visualization usable. Especially with the age distributions, a gradient would be most appropriate but that also might have been difficult to differentiate the colors within
+          the same gradient on the map.</p>
+        <p>
+    </div>
+  </body>
+</html>
