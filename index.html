@@ -43,7 +43,7 @@
           to show that deaths were concentrated around the contaminated water pump and with his research, he was able to convince city officials to take the handles off of
           the Borad Street pump so that citizens could not draw contaminated water.</p>
 
-          <p>The below visualization is a replica of the map that Dr. John Snow created. Click <a href ="link">here</a> to see a video demonstration
+          <p>The below visualization is a replica of the map that Dr. John Snow created. Click <a href ="https://youtu.be/VwzBiXXFGoI">here</a> to see a video demonstration
           of the visualization.</p>
     </div>
       <script type="text/javascript">
@@ -117,7 +117,26 @@
                 .attr("r", 5)
                 .attr("cx", function (d) {return xScale(d.x); })
                 .attr("cy", function (d) {return yScale(d.y); })
+                .attr('class',"death_dots")
         });
+
+
+        function updateChart(total_death){
+            d3.csv("deaths_age_sex.csv", function(deathlocations) {
+                console.log(deathlocations.slice(0,total_death))
+                new_loc = deathlocations.slice(0,total_death)
+                g.selectAll("circle")
+                    .data(new_loc)
+                    .enter()
+                    .append("circle")
+                    .style('fill', 'red')
+                    .attr("r", 5)
+                    .attr("cx", function (d) {return xScale(d.x); })
+                    .attr("cy", function (d) {return yScale(d.y); })
+                    .attr('class',"death_dots")
+
+            })
+        }
 
         d3.csv("deathdays.csv", function(deathsperday) {
           console.log(deathsperday);
@@ -145,17 +164,22 @@
                 .attr("height", function (d) {
                   return yScale2(d.deaths);
                 })
+                .on("click", function(d,i) {
+
+                    d3.selectAll(".death_dots").remove()
+                    console.log(i)
+                    bar_index = i
+                    selectedDates=deathsperday.filter(function(d,i){return i <= bar_index})
+                    var totalDead=d3.sum(selectedDates, d=>d.deaths)
+                    console.log(totalDead)
+                    updateChart(totalDead)
+
+                })
                 .append("title")
                 .text(function(d) {
                   return d.deaths + " deaths";
                 })
-                .on("click", function(d) {
-                    d3.selectAll("rect")
-                    .filter(function(d2) {
-                      return d2.date > d.date;
-                    })
-                    console.log(d2);
-                });
+
 
 
 
